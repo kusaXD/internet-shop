@@ -1,9 +1,34 @@
-import "./App.css";
+import { useState } from "react";
+import { Link } from "react-router";
+import HeaderShop from "./Components/HeaderShop";
+import ProductsList from "./Components/ProductsList";
 
 function App() {
+  const [products, setProducts] = useState([
+    {
+      id: 1,
+      name: "Name",
+      description: "Description",
+      price: 100,
+    },
+    {
+      id: 1,
+      name: "Name",
+      description: "Description",
+      price: 100,
+    },
+    {
+      id: 1,
+      name: "Name",
+      description: "Description",
+      price: 100,
+    },
+  ]);
+
   return (
     <div>
-      <h1 className=""></h1>
+      <HeaderShop title={"Cart"} link={"/Cart"} />
+      <ProductsList products={products} />
     </div>
   );
 }
