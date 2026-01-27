@@ -4,6 +4,7 @@ import "./styles/index.css";
 import App from "./App";
 import { createBrowserRouter, RouterProvider } from "react-router";
 import Cart from "./Pages/Cart";
+import { CartProvider } from "./Context/CartContext";
 
 const router = createBrowserRouter([
   {
@@ -17,4 +18,8 @@ const router = createBrowserRouter([
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<RouterProvider router={router} />);
+root.render(
+  <CartProvider>
+    <RouterProvider router={router} />
+  </CartProvider>,
+);
