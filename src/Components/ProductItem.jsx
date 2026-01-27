@@ -6,7 +6,7 @@ function ProductItem({ product }) {
 
   return (
     <div className="shadow-lg rounded-md w-96 h-52 flex flex-col justify-center items-center m-5">
-      <div className="w-80 h-48">
+      <div className=" w-80 h-48">
         <section className="flex justify-center items-center flex-col">
           <h2 className="font-bold text-3xl mt-5">{product.name}</h2>
           <p className="text-neutral-500 text-2xl mt-4">
