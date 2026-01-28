@@ -13,13 +13,13 @@ function App() {
       price: 500,
     },
     {
-      id: 1,
+      id: 2,
       name: "TV",
       description: "Description",
       price: 300,
     },
     {
-      id: 1,
+      id: 3,
       name: "Iphone 16",
       description: "Description",
       price: 400,

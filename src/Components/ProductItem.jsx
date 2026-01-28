@@ -17,7 +17,7 @@ function ProductItem({ product }) {
           <p className="text-blue-500 text-2xl font-bold">{product.price}</p>
           <button
             onClick={() => addToCart(product)}
-            className="bg-blue-500 text-xl w-30 p-2 rounded-md text-white font-bold"
+            className="bg-blue-500 text-xl w-30 hover:text-2xl hover:bg-blue-700 p-2 rounded-md text-white font-bold"
           >
             Add to cart
           </button>
