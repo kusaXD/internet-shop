@@ -5,16 +5,38 @@ const CartContext = createContext();
 const initialState = {
   cart: [],
   totalPrice: 0,
+  totalQuanity: 0,
 };
 
 const CartReducer = (state, action) => {
   switch (action.type) {
     case "ADD_TO_CART":
-      return {
-        ...state,
-        cart: [...state.cart, action.payload],
-        totalPrice: state.totalPrice + action.payload.price,
-      };
+      const existingItem = state.cart.find(
+        (item) => item.id === action.payload.id,
+      );
+
+      if (existingItem) {
+        const updatedItems = state.cart.map((item) =>
+          item.id === action.payload.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item,
+        );
+
+        return {
+          ...state,
+          cart: updatedItems,
+          totalQuanity: state.totalQuanity + 1,
+          totalPrice: state.totalPrice + action.payload.price,
+        };
+      } else {
+        const newItem = { ...action.payload, quantity: 1 };
+        return {
+          ...state,
+          cart: [...state.cart, newItem],
+          totalQuanity: state.totalQuanity + 1,
+          totalPrice: state.totalPrice + action.payload.price,
+        };
+      }
     case "REMOVE_FROM_CART":
       const itemToRemove = state.cart.find(
         (item) => item.cartItemId === action.payload,
@@ -49,6 +71,7 @@ const CartProvider = ({ children }) => {
       value={{
         cart: state.cart,
         totalPrice: state.totalPrice,
+        totalQuanity: state.totalQuanity,
         addToCart,
         removeFromCart,
       }}

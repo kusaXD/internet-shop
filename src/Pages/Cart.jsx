@@ -1,17 +1,16 @@
 import React from "react";
-import { Link } from "react-router";
 import HeaderShop from "../Components/HeaderShop";
 import { useCartContext } from "../Context/CartContext";
 
 function Cart() {
-  const { cart, totalPrice, removeFromCart } = useCartContext();
+  const { cart, totalPrice, totalQuanity, removeFromCart } = useCartContext();
 
   return (
     <div>
       <HeaderShop title={"Catalog"} link={"/"} />
       <h2 className="text-6xl font-bold text-center mt-52">Products in cart</h2>
       <p className="text-4xl font-bold text-center mt-4">
-        Total items: {cart.length}
+        Total items: {totalQuanity}
       </p>
       <p className="text-4xl font-bold text-center mt-4">
         total cost: {totalPrice}
