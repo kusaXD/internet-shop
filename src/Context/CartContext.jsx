@@ -44,7 +44,9 @@ const CartReducer = (state, action) => {
       return {
         ...state,
         cart: state.cart.filter((item) => item.cartItemId !== action.payload),
-        totalPrice: state.totalPrice - itemToRemove.price,
+        totalPrice:
+          state.totalPrice - itemToRemove.price * itemToRemove.quantity,
+        totalQuanity: state.totalQuanity - itemToRemove.quantity,
       };
     default:
       return state;
