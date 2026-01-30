@@ -20,7 +20,8 @@ function Cart() {
           {cart.map((item) => (
             <div className="w-3/4 h-28 flex justify-between items-center p-3 rounded-lg m-4 text-4xl shadow-xl font-bold">
               <h3>{item.name}</h3>
-              <h3>{item.price}</h3>
+              <h3>quanity: {item.quanity}</h3>
+              <h3>price: {item.price}</h3>
               <button onClick={() => removeFromCart(item.cartItemId)}>
                 remove
               </button>

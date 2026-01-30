@@ -18,7 +18,7 @@ const CartReducer = (state, action) => {
       if (existingItem) {
         const updatedItems = state.cart.map((item) =>
           item.id === action.payload.id
-            ? { ...item, quantity: item.quantity + 1 }
+            ? { ...item, quanity: item.quanity + 1 }
             : item,
         );
 
@@ -29,7 +29,7 @@ const CartReducer = (state, action) => {
           totalPrice: state.totalPrice + action.payload.price,
         };
       } else {
-        const newItem = { ...action.payload, quantity: 1 };
+        const newItem = { ...action.payload, quanity: 1 };
         return {
           ...state,
           cart: [...state.cart, newItem],
@@ -45,8 +45,8 @@ const CartReducer = (state, action) => {
         ...state,
         cart: state.cart.filter((item) => item.cartItemId !== action.payload),
         totalPrice:
-          state.totalPrice - itemToRemove.price * itemToRemove.quantity,
-        totalQuanity: state.totalQuanity - itemToRemove.quantity,
+          state.totalPrice - itemToRemove.price * itemToRemove.quanity,
+        totalQuanity: state.totalQuanity - itemToRemove.quanity,
       };
     default:
       return state;
