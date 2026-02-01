@@ -5,6 +5,7 @@ import App from "./App";
 import { createBrowserRouter, RouterProvider } from "react-router";
 import Cart from "./Pages/Cart";
 import { CartProvider } from "./Context/CartContext";
+import { ProductsProvider } from "./Context/ProductContext";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,8 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <CartProvider>
-    <RouterProvider router={router} />
+    <ProductsProvider>
+      <RouterProvider router={router} />
+    </ProductsProvider>
   </CartProvider>,
 );

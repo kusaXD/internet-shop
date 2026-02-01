@@ -1,34 +1,15 @@
-import { useState } from "react";
-
 import HeaderShop from "./Components/HeaderShop";
 import ProductsList from "./Components/ProductsList";
-import { useCartContext } from "./Context/CartContext";
+import ProductForm from "./Components/ProductForm";
+import { useProducts } from "./Context/ProductContext";
 
 function App() {
-  const [products, setProducts] = useState([
-    {
-      id: 1,
-      name: "Playstation",
-      description: "Description",
-      price: 500,
-    },
-    {
-      id: 2,
-      name: "TV",
-      description: "Description",
-      price: 300,
-    },
-    {
-      id: 3,
-      name: "Iphone 16",
-      description: "Description",
-      price: 400,
-    },
-  ]);
+  const { products, setProducts } = useProducts();
 
   return (
     <div>
       <HeaderShop title={"Cart"} link={"/Cart"} />
+      <ProductForm products={products} setProducts={setProducts} />
       <ProductsList products={products} />
     </div>
   );
