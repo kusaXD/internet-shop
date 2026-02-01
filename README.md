@@ -2,8 +2,8 @@
 
 A simple online store with product catalog, add product form, and shopping cart. Built with React, Context API, and Tailwind CSS.
 
-![React](https://img.shields.io/badge/React-18.2.0-61DAFB?logo=react&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.3.0-38B2AC?logo=tailwind-css&logoColor=white)
+![React]
+![Tailwind CSS]
 
 ---
 
@@ -49,3 +49,4 @@ npm install
 # Start development server
 npm run dev
 ```
+
