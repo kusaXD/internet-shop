@@ -40,7 +40,7 @@ A simple online store with product catalog, add product form, and shopping cart.
 
 ```bash
 # Clone the repository
-git clone https://github.com/your-username/react-shop.git
+git clone https://github.com/kusaXD/react-shop.git
 cd react-shop
 
 # Install dependencies
@@ -49,6 +49,7 @@ npm install
 # Start development server
 npm run dev
 ```
+
 
 
 
